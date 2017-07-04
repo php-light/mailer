@@ -1,0 +1,20 @@
+{
+    "name": "php-light/mailer",
+    "description": "A PHPLight wrapper for swiftmailer",
+    "type": "library",
+    "require": {
+        "swiftmailer/swiftmailer": "^6.0"
+    },
+    "authors": [
+        {
+            "name": "Khalid Sookia",
+            "email": "khalidsookia@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": { "PhpLight\\Mailer\\": "" },
+        "exclude-from-classmap": [
+            "/Tests/"
+        ]
+    }
+}
