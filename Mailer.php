@@ -95,16 +95,6 @@ class Mailer
             throw new \Exception("The value of transport mode is wrong under phplight_mailer config. Valid values are $validValues");
         }
 
-        if (strtolower($this->config[$this->configToUse]["transport"]) === "smtp") {
-            if (!isset($this->config[$this->configToUse]["username"]) || $this->config[$this->configToUse]["username"] === "") {
-                throw new \Exception("Mailer config error. The parameter 'username' is missing.");
-            }
-
-            if (!isset($this->config[$this->configToUse]["password"]) || $this->config[$this->configToUse]["password"] === "") {
-                throw new \Exception("Mailer config error. The parameter 'password' is missing.");
-            }
-        }
-
         return $this;
     }
 
@@ -113,9 +103,6 @@ class Mailer
      */
     private function setTransport()
     {
-        if (!isset($this->config[$this->configToUse]["transport"])) {
-        }
-
         $this->transport = $this->config[$this->configToUse]["transport"];
 
         return $this;

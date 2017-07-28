@@ -40,10 +40,15 @@ class SmtpStrategy
      */
     private function setTransport()
     {
-        $this->transport = (new \Swift_SmtpTransport($this->config["host"], $this->config["port"]))
-            ->setUsername($this->config["username"])
-            ->setPassword($this->config["password"])
-        ;
+        $this->transport = (new \Swift_SmtpTransport($this->config["host"], $this->config["port"]));
+
+        if (isset($this->config["username"])) {
+            $this->transport->setUsername($this->config["username"]);
+        }
+
+        if (isset($this->config["password"])) {
+            $this->transport->setPassword($this->config["password"]);
+        }
 
         return $this;
     }
