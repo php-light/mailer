@@ -3,7 +3,7 @@
     "description": "A PHPLight wrapper for swiftmailer",
     "type": "library",
     "require": {
-        "swiftmailer/swiftmailer": "^6.0"
+        "swiftmailer/swiftmailer": "6.0.1"
     },
     "authors": [
         {
